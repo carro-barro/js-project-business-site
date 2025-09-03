@@ -1,0 +1,102 @@
+body {
+  background-color: lightpink;
+  font-family: "montserrat";
+}
+
+p {
+  font-size: 10px;
+  width: 100%;
+}
+
+h3 {
+  font-size: 15px;
+}
+
+.nav-bar {
+  display: none;
+}
+
+@media (min-width: 1025px) {
+
+  .nav-bar {
+    background-color: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .nav-links {
+    color: black;
+    font-weight: 500;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+    margin: 20px;
+    transition: 0.3s ease;
+  }
+
+  a:hover {
+    font-weight: 700;
+  }
+}
+
+.article-cards {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+@media (max-width: 599px) {
+
+  .article-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+
+  .article-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+  .article-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+article {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px rgba(216, 149, 158, 0.6);
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+article:hover {
+  transform: translateY(-8px);
+  box-shadow: 10px 10px 10px rgb(216, 149, 158);
+}
+
+/* change the background to diffrent colors on the diffrent cards*/
+
+.health {
+  background: white;
+}
+
+.new-owners {
+  background: white;
+}
+
+.flowers {
+  background: white;
+}
+
+.toxic-foods {
+  background: white;
+}
