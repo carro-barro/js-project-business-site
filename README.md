@@ -10,3 +10,5 @@
 + 5 foods you didn't know were toxic for cats
 
 make a carousel of products
+
+link to netlify: https://carolinas-business-site.netlify.app/
