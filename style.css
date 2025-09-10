@@ -2,23 +2,26 @@ body {
   background-color: lightpink;
   font-family: "montserrat";
   margin: 0;
+}
+
+.site {
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 
-.p-cards {
-  font-size: 10px;
-  width: 100%;
-}
 
-h3 {
-  font-size: 15px;
-  margin: 5px;
-}
+/* nav-bar is only visible on desktop */
 
 .nav-bar {
   display: none;
 }
+
 
 @media (min-width: 1025px) {
 
@@ -30,89 +33,199 @@ h3 {
     height: 20px;
   }
 
-  .nav-links {
+
+  .nav-links-container {
     font-size: 15px;
     color: black;
     font-weight: 500;
   }
 
-  .nav-a {
+
+  .nav-link {
     text-decoration: none;
     color: black;
     margin: 20px;
     transition: 0.3s ease;
   }
 
-  a:hover {
+
+  .nav-link:hover {
     font-weight: 700;
     font-size: 16px;
   }
 }
 
-.article-cards {
+.article-text {
+  font-size: 10px;
+  width: 100%;
+}
+
+
+.article-heading {
+  font-size: 15px;
+  margin: 5px;
+}
+
+.article-cards-container {
   display: grid;
   gap: 1rem;
   margin: 0 auto 0 auto;
   max-width: 1500px;
   padding: 30px;
-  height: 100%;
-  grid-auto-rows: min-content;
 }
+
+
+/* the article-cards are displayed diffrently on mobile, tablet and desktop */
 
 @media (max-width: 599px) {
 
-  .article-cards {
+  .article-cards-container {
     grid-template-columns: 1fr;
   }
 }
 
+
 @media (min-width: 600px) and (max-width: 1023px) {
 
-  .article-cards {
+  .article-cards-container {
     grid-template-columns: repeat(2, 1fr);
   }
-
 }
+
 
 @media (min-width: 1024px) {
 
-  .article-cards {
+  .article-cards-container {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-article {
+
+.article-card {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 10px 10px 10px rgba(216, 149, 158, 0.6);
   transition: transform 0.5s ease, box-shadow 0.3s ease;
 }
 
-article:hover {
+
+.article-card:hover {
   transform: translateY(-8px);
   box-shadow: 10px 10px 10px rgb(216, 149, 158);
 }
 
-/* change the background to diffrent colors on the diffrent cards*/
 
-.health {
+.bullet-list-card {
+  font-size: 10px;
+  padding: 0px 15px;
+}
+
+
+/* changed the background to diffrent colors on the diffrent cards*/
+
+.health-article {
   background: #b5d6d6;
 }
 
-.new-owners {
+.new-owners-article {
   background: #e6dfc5;
 }
 
-.flowers {
+
+.flowers-article {
   background: #f6c1b2;
 }
 
-.toxic-foods {
+
+.toxic-foods-article {
   background: rgb(153, 153, 194);
+}
+
+/* make rounded corners on the sign-up form card */
+.form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 30px;
+}
+
+/* image styling */
+.cat-subscription-box {
+  max-height: 500px;
+  margin-left: 0;
+}
+
+fieldset {
+  background: lightcoral;
+  border: none;
+  height: 500px;
+  width: 500px;
+  margin: auto 0;
+  box-sizing: border-box;
+  padding: 30px;
+}
+
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin: 10px 5px;
+  font-size: 16px;
+  user-select: none;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
 
 
 
+/* change the color on the checkboxes if I want, now its what i followed in the video */
+
+.custom-checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 19px;
+  width: 19px;
+  background-color: #eee;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.checkbox-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.checkbox-container:hover input~.custom-checkbox {
+  background-color: #ccc;
+}
+
+.checkbox-container input:checked~.custom-checkbox {
+  background-color: #444444;
+}
+
+.custom-checkbox:after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 6px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  top: 4px;
+  left: 7px;
+  transform: rotate(45deg);
+  display: none;
+}
+
+.checkbox-container input:checked~.custom-checkbox:after {
+  display: block;
+}
 
 footer {
   background: rgb(248, 218, 222);
@@ -120,6 +233,7 @@ footer {
   padding: 10px;
   justify-content: space-between;
 }
+
 
 .cat-footer {
   max-height: 150px;
@@ -132,18 +246,17 @@ footer {
   margin: 10px 0 20px 0;
 }
 
-.icon-a {
+
+.icon-link {
   margin: 10px 10px 0 0;
   color: black;
   display: flex;
   flex-direction: column;
-}
-
-ion-icon:hover {
-  font-size: 30px;
-}
-
-ion-icon {
   font-size: 22px;
   transition: 0.3s;
+}
+
+
+.icon-link:hover {
+  font-size: 30px;
 }
