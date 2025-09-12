@@ -3,27 +3,59 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <link
+    rel="stylesheet"
+    href="style.css"
+  />
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"
+  >
   <title>Business site</title>
 </head>
 
 <body>
   <div class="site">
+
     <header>
       <nav class="nav-bar">
         <div class="nav-links-container">
-          <a class="nav-link" href="#">Home</a>
-          <a class="nav-link" href="#">Products</a>
-          <a class="nav-link" href="#">Articles</a>
-          <a class="nav-link" href="#">Sign up</a>
+          <a
+            class="nav-link"
+            href="#"
+          >Home</a>
+          <a
+            class="nav-link"
+            href="#"
+          >Products</a>
+          <a
+            class="nav-link"
+            href="#"
+          >Articles</a>
+          <a
+            class="nav-link"
+            href="#"
+          >Sign up</a>
         </div>
       </nav>
+      <div class="hero-image">
+        <h1>Cat subscription</h1>
+      </div>
     </header>
+
     <main>
       <div class="article-cards-container">
         <article class="article-card health-article">
@@ -41,30 +73,26 @@
         <article class="article-card new-owners-article">
           <h3 class="article-heading">Tips for new cat owners</h3>
           <p class="article-text">If you're a new cat owner, a few simple tips can make the transition smoother for both
-            you
-            and your feline friend. Start by creating a safe, quiet space where your cat can retreat and feel secure.
+            you and your feline friend. Start by creating a safe, quiet space where your cat can retreat and feel
+            secure.
             Provide fresh water,quality food, and a clean litter box in an easily accessible spot. Playtime is
             important—interactive toys help your cat burn energy and build trust with you. Be patient and let your cat
             approach at their own pace, as forcing interaction can cause stress. Lastly, schedule regular vet checkups
-            to
-            keep your cat healthy and happy.</p>
+            to keep your cat healthy and happy.</p>
         </article>
         <article class="article-card flowers-article">
           <h3 class="article-heading">Flowers that actually aren't cat friendly</h3>
           <p class="article-text">Not all flowers are safe for cats, and some common ones can actually be toxic. Lilies
-            are
-            especially dangerous—even a small amount can cause serious kidney problems. Other flowers to avoid include
-            tulips, daffodils,
-            chrysanthemums, and azaleas, which may lead to stomach upset, drooling, or worse if ingested. If you share
-            your home with a cat, it's best to keep these plants out of reach and choose pet-safe alternatives like
-            roses,
-            sunflowers, or orchids instead.</p>
+            are especially dangerous—even a small amount can cause serious kidney problems. Other flowers to avoid
+            include
+            tulips, daffodils, chrysanthemums, and azaleas, which may lead to stomach upset, drooling, or worse if
+            ingested. If you share your home with a cat, it's best to keep these plants out of reach and choose pet-safe
+            alternatives like roses, sunflowers, or orchids instead.</p>
         </article>
         <article class="article-card toxic-foods-article">
           <h3 class="article-heading">5 foods you didn't know were toxic for cats</h3>
           <p class="article-text">Some everyday foods that seem harmless can actually be toxic for cats. Here are five
-            you
-            might not know about:</p>
+            you might not know about:</p>
           <ul class="bullet-list-card">
             <li>Onions and garlic - even small amounts can damage red blood cells.</li>
             <li>Grapes and raisins - may cause kidney failure.</li>
@@ -73,47 +101,69 @@
             <li>Caffeine (coffee, tea, energy drinks) - can affect the heart and nervou system</li>
           </ul>
           <p class="article-text">Keeping these foods out of reach helps protect your cat's health and prevents
-            emergency
-            vet
-            visits</p>
+            emergency vet visits</p>
         </article>
       </div>
 
       <div class="form-container">
-        <img class="cat-subscription-box" src="img/cat-subscription.webp" alt="cat subscription box">
-        <form action="https://httpbin.org/anything" method="post">
+        <img
+          class="cat-subscription-box"
+          src="img/cat-subscription.webp"
+          alt="cat subscription box"
+        >
+        <form
+          action="https://httpbin.org/anything"
+          method="post"
+        >
           <fieldset>
             <div class="form-input">
               <label for="name">Full name</label>
-              <input type="text" id="name" name="name" placeholder="Jane Doe">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Jane Doe" required
+              >
             </div>
             <div class="form-input">
               <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="example@gmail.com">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="example@gmail.com" required
+              >
             </div>
             <div class="form-input">
               <label for="address">Address</label>
-              <input type="text" id="address" name="address">
+              <input
+                type="text"
+                id="address"
+                name="address" required
+              >
             </div>
             <div class="form-input">
               <label for="subscription">Subscription</label>
-              <select name="subscription" id="subscription">
+              <select
+                name="subscription"
+                id="subscription" required
+              >
                 <option value="Small">Small</option>
                 <option value="Medium">Medium</option>
                 <option value="Large">Large</option>
               </select>
             </div>
             <div class="form-input">
-              <p>Vilka saker vill du ha i din box</p>
+              <p>Vilka saker vill du ha i din box?</p>
               <div class="checkbox-row">
 
                 <label class="checkbox-container">
                   <input type="checkbox">
-                  <span class="custom-checkbox"></span>kattgodis
+                  <span class="custom-checkbox"></span>godis
                 </label>
                 <label class="checkbox-container">
                   <input type="checkbox">
-                  <span class="custom-checkbox"></span>kattmat
+                  <span class="custom-checkbox"></span>mat
                 </label>
                 <label class="checkbox-container">
                   <input type="checkbox">
@@ -127,7 +177,11 @@
             </div>
             <div class="form-input">
               <label for="message">Message</label>
-              <input type="text" id="message" name="message">
+              <input
+                type="text"
+                id="message"
+                name="message"
+              >
             </div>
             <button type="submit">to checkout</button>
           </fieldset>
@@ -138,16 +192,34 @@
       <div class="socials">
         <p class="p-footer">Connect with us!</p>
         <div class="icons-container">
-          <a href="#"><ion-icon class="icon-link" name="logo-linkedin"></ion-icon></a>
-          <a href="#"><ion-icon class="icon-link" name="logo-facebook"></ion-icon></a>
-          <a href="#"><ion-icon class="icon-link" name="logo-instagram"></ion-icon></a>
+          <a href="#"><ion-icon
+              class="icon-link"
+              name="logo-linkedin"
+            ></ion-icon></a>
+          <a href="#"><ion-icon
+              class="icon-link"
+              name="logo-facebook"
+            ></ion-icon></a>
+          <a href="#"><ion-icon
+              class="icon-link"
+              name="logo-instagram"
+            ></ion-icon></a>
         </div>
       </div>
-      <img class="cat-footer" src="img/cat-footer.png" />
+      <img
+        class="cat-footer"
+        src="img/cat-footer.png"
+      />
     </footer>
   </div>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
 </body>
 
 </html>
