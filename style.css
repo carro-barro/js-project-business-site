@@ -14,18 +14,74 @@ main {
   flex: 1;
 }
 
+/* hamburgar meny that is only visible on mobile */
 
+
+
+
+.mobile-navbar {
+  display: none;
+ 
+}
+
+
+@media (max-width: 1023px) {
+
+.mobile-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(249, 231, 233);
+  color: black;
+  padding: 0.8rem 1.5rem;
+  position: relative;
+}
+
+.ham-menu {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.ham-menu span {
+  height: 3px;
+  width: 25px;
+  background: black;
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+.ham-menu-links {
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 200px;
+  padding: 1rem;
+}
+
+.ham-menu-links li a {
+  color: black;
+  text-decoration: none;
+}
+
+  .ham-menu-links.show {
+    display: flex;
+  }
+}
 
 /* nav-bar is only visible on desktop */
 
-.nav-bar {
+.desktop-navbar {
   display: none;
 }
 
 
 @media (min-width: 1024px) {
 
-  .nav-bar {
+  .desktop-navbar {
     background-color: rgb(249, 231, 233);
     padding: 30px;
     display: flex;

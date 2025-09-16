@@ -31,7 +31,21 @@
   <div class="site">
 
     <header>
-      <nav class="nav-bar">
+      <nav class="mobile-navbar">
+        <div class="ham-menu" id="hamMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="ham-menu-links" id="hamMenuLinks">
+          <li><a class="menu-item" href="#">Home</a></li>
+          <li><a class="menu-item" href="#">Products</a></li>
+          <li><a class="menu-item" href="#">Articles</a></li>
+          <li><a class="menu-item" href="#">Sign up</a></li>
+        </ul>
+      </nav>
+
+      <nav class="desktop-navbar">
         <div class="nav-links-container">
           <a
             class="nav-link"
@@ -212,6 +226,7 @@
       />
     </footer>
   </div>
+  <script src="script.js"></script>
   <script
     nomodule
     src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
