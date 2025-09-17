@@ -16,14 +16,10 @@ main {
 
 /* hamburgar meny that is only visible on mobile */
 
-
-
-
 .mobile-navbar {
   display: none;
  
 }
-
 
 @media (max-width: 1023px) {
 
@@ -41,30 +37,54 @@ main {
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  width: 40px;
 }
 
 .ham-menu span {
-  height: 3px;
-  width: 25px;
+  height: 4px;
+  width: 35px;
   background: black;
   margin: 4px 0;
   border-radius: 2px;
+  transition: all 0.4s ease-in-out;
+}
+
+.ham-menu.active span:nth-child(1){
+  transform: translateY(12px) rotate(45deg);
+}
+
+.ham-menu.active span:nth-child(2){
+  opacity: 0;
+}
+
+.ham-menu.active span:nth-child(3){
+  transform: translateY(-12px) rotate(-45deg);
 }
 
 .ham-menu-links {
   list-style: none;
   display: none;
   flex-direction: column;
+  justify-content: center;
   position: absolute;
-  top: 60px;
-  right: 0;
-  width: 200px;
-  padding: 1rem;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  margin: 0;
+  background: rgb(249, 231, 233);
+  z-index: 1000;
 }
 
 .ham-menu-links li a {
   color: black;
   text-decoration: none;
+}
+
+.ham-menu-links li {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 17px 0;
 }
 
   .ham-menu-links.show {
@@ -78,7 +98,6 @@ main {
   display: none;
 }
 
-
 @media (min-width: 1024px) {
 
   .desktop-navbar {
@@ -89,13 +108,11 @@ main {
     height: 20px;
   }
 
-
   .nav-links-container {
-    font-size: 15px;
+    font-size: 18px;
     color: black;
     font-weight: 500;
   }
-
 
   .nav-link {
     text-decoration: none;
@@ -104,27 +121,30 @@ main {
     transition: 0.3s ease;
   }
 
-
   .nav-link:hover {
     font-weight: 700;
-    font-size: 16px;
+    font-size: 19px;
   }
+}
+
+.hero-image {
+  background-image: linear-gradient(rgba(72, 58, 65, 0.455)), url("./img/cat-hero-image.jpg");
+  background-size: cover;
+  background-position: center;
+
+    
+    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 
 @media (max-width: 599px) {
 
   .hero-image {
-    background-image: linear-gradient(rgba(72, 58, 65, 0.455)), url("./img/cat-hero-image.jpg");
-    background-size: cover;
-    background-position: center;
     height: 45vh;
-    width: 60vh;
-    
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
+    max-width: 90vh;
     font-size: 15px;
   }
 }
@@ -132,17 +152,7 @@ main {
 @media (min-width: 600px) and (max-width: 1023px) {
 
   .hero-image {
-    background-image: linear-gradient(rgba(72, 58, 65, 0.455)), url("./img/cat-hero-image.jpg");
-    background-size: cover;
-    background-position: center;
-    height: 45vh;
-
-    
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
+    height: 55vh;
     font-size: 20px;
   }
 }
@@ -150,17 +160,74 @@ main {
 @media (min-width: 1025px) {
 
   .hero-image {
-    background-image: linear-gradient(rgba(72, 58, 65, 0.455)), url("./img/cat-hero-image.jpg");
-    background-size: cover;
-    background-position: center;
     height: 60vh;
-    
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
     font-size: 25px;
+  }
+}
+
+.products-container {
+  grid-template-row: 1fr;
+  display: grid;
+  gap: 15px;
+  margin: 0 auto 0 auto;
+  padding: 30px 25px;
+}
+
+.product-cards {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 250px;
+  width: 180px;
+
+  border-radius: 6px;
+  box-shadow: 10px 10px 10px rgba(216, 149, 158, 0.6);
+}
+
+.product-img {
+  max-height: 130px;
+  width: auto;
+  margin-top: 22px;
+}
+
+.product-heading {
+  font-size: 15px;
+  margin: 5px;
+}
+
+.price {
+  margin: 5px auto 0 auto;
+  font-size: 10px;
+}
+
+.product-text {
+  font-size: 10px;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+@media (max-width: 599px) {
+
+  .products-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (min-width: 600px) and (max-width: 1023px) {
+
+  .products-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+@media (min-width: 1024px) {
+
+  .products-container {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 
@@ -169,7 +236,6 @@ main {
   font-size: 10px;
   width: 100%;
 }
-
 
 .article-heading {
   font-size: 15px;
@@ -183,6 +249,8 @@ main {
   max-width: 1500px;
   padding: 30px;
 }
+
+
 
 
 /* the article-cards are displayed diffrently on mobile, tablet and desktop */
@@ -230,7 +298,6 @@ main {
   padding: 0px 15px;
 }
 
-
 /* changed the background to diffrent colors on the diffrent cards*/
 
 .health-article {
@@ -241,11 +308,9 @@ main {
   background: #e6dfc5;
 }
 
-
 .flowers-article {
-  background: #f6c1b2;
+  background: #f6e2b2;
 }
-
 
 .toxic-foods-article {
   background: rgb(153, 153, 194);
@@ -295,7 +360,7 @@ main {
       border-radius: 6px;
       }
 
-  @media (max-width: 599px) {
+  @media (max-width: 900px) {
     .form-container {
       flex-direction: column;
       padding: 15px;
@@ -312,7 +377,7 @@ main {
     }
 
     .form-input {
-      font-size: 12px;
+      font-size: 16px;
     }
 
     input, select {
@@ -320,12 +385,12 @@ main {
       font-size: 10px;
     }
 
-      .checkbox-container {
-        font-size: 10px;
-        padding-left: 24px;
-        margin-bottom: 10px;
-        transform: scale(0.9);
-      }
+    .checkbox-container {
+      font-size: 15px;
+      padding-left: 24px;
+      margin-bottom: 10px;
+      transform: scale(0.9);
+    }
 
     button {
       font-size: 13px;
@@ -343,7 +408,7 @@ main {
 
   }
 
-  @media (min-width: 600px) and (max-width: 1023px) {
+  @media (min-width: 901px) {
  
      .form-input {
       padding: 10px;
@@ -351,50 +416,29 @@ main {
     }
     
     input, select {
-      padding: 10px;
+     padding: 10px;
       font-size: 13px;
     }
 
     .checkbox-container {
-      font-size: 16px;
+      font-size: 18px;
       padding-left: 25px;
       margin: 10px 5px;
     }
 
   }
 
-  @media (min-width: 1024px) {
-
-    .form-input {
-      padding: 10px;
-      font-family: "montserrat";
-    }
-    
-    input, select {
-      padding: 10px;
-      font-size: 13px;
-    }
-
-    .checkbox-container {
-      font-size: 16px;
-      padding-left: 25px;
-      margin: 10px 5px;
-    }
-  }
 
 
-  .checkbox-container {
-    display: block;
-    position: relative;
-    user-select: none;
-
-    /* flex: 1 1 auto;
-    min-width: 0; */
-    
+.checkbox-container {
+  display: block;
+  position: relative;
+  user-select: none;    
 }
-  .form-input::placeholder {
-    font-family: "montserrat";
-  }
+
+.form-input::placeholder {
+   font-family: "montserrat";
+}
   
 
 .checkbox-container input {
@@ -425,7 +469,7 @@ main {
   flex-direction: row;
   /* justify-content: space-between;
   gap: 8px; */
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 .checkbox-container:hover input~.custom-checkbox {
