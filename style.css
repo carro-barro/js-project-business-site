@@ -61,9 +61,10 @@ main {
   transform: translateY(-12px) rotate(-45deg);
 }
 
+
 .ham-menu-links {
   list-style: none;
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   position: absolute;
@@ -74,6 +75,22 @@ main {
   margin: 0;
   background: rgb(249, 231, 233);
   z-index: 1000;
+
+  
+  max-height: 0;              
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.4s ease-in-out;
+  pointer-events: none; 
+}
+
+
+.ham-menu-links.show {
+  max-height: 400px;          
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto; 
 }
 
 .ham-menu-links li a {
@@ -87,9 +104,6 @@ main {
   margin: 17px 0;
 }
 
-  .ham-menu-links.show {
-    display: flex;
-  }
 }
 
 /* nav-bar is only visible on desktop */
@@ -165,9 +179,19 @@ main {
   }
 }
 
+.product-h1, .article-h1 {
+  font-size: 25px;
+  font-weight: 550;
+  margin: 50px 0 0 30px;
+}
+
 .products-container {
-  grid-template-row: 1fr;
-  display: grid;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 1rem;
+
   gap: 15px;
   margin: 0 auto 0 auto;
   padding: 30px 25px;
@@ -178,8 +202,10 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 0 0 180px;
   height: 250px;
   width: 180px;
+  scroll-snap-align: start;
 
   border-radius: 6px;
   box-shadow: 10px 10px 10px rgba(216, 149, 158, 0.6);
@@ -208,29 +234,23 @@ main {
   text-align: center;
 }
 
-@media (max-width: 599px) {
+/* scrollbar styling for the products */
 
-  .products-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.products-container::-webkit-scrollbar {
+  height: 8px;
 }
-
-
-@media (min-width: 600px) and (max-width: 1023px) {
-
-  .products-container {
-    grid-template-columns: repeat(4, 1fr);
-  }
+.products-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+  margin: 30px;
 }
-
-
-@media (min-width: 1024px) {
-
-  .products-container {
-    grid-template-columns: repeat(5, 1fr);
-  }
+.products-container::-webkit-scrollbar-thumb {
+  background: #a27d87;
+  border-radius: 10px;
 }
-
+.products-container::-webkit-scrollbar-thumb:hover {
+  background: #765b62;
+}
 
 .article-text {
   font-size: 10px;
@@ -251,8 +271,6 @@ main {
 }
 
 
-
-
 /* the article-cards are displayed diffrently on mobile, tablet and desktop */
 
 @media (max-width: 599px) {
@@ -260,24 +278,55 @@ main {
   .article-cards-container {
     grid-template-columns: 1fr;
   }
-}
 
+  .article-button {
+  background: rgb(243, 215, 220);
+  font-family: "montserrat";
+  font-size: 15px;
+  border: 1px solid rgb(201, 133, 145);
+  border-radius: 15px;
+  padding: 8px 10px;
+  width: 90%;
+  margin: 0 30px 20px 30px;
+  
+}
+}
 
 @media (min-width: 600px) and (max-width: 1023px) {
 
   .article-cards-container {
     grid-template-columns: repeat(2, 1fr);
   }
-}
 
+  .article-button {
+  background: rgb(243, 215, 220);
+  font-family: "montserrat";
+  font-size: 15px;
+  border: 1px solid rgb(201, 133, 145);
+  border-radius: 15px;
+  padding: 8px 10px;
+  width: 200px;
+  margin: 0 0 20px 30px;
+}
+}
 
 @media (min-width: 1024px) {
 
   .article-cards-container {
     grid-template-columns: repeat(4, 1fr);
   }
-}
 
+  .article-button {
+  background: rgb(243, 215, 220);
+  font-family: "montserrat";
+  font-size: 15px;
+  border: 1px solid rgb(201, 133, 145);
+  border-radius: 15px;
+  padding: 8px 10px;
+  width: 200px;
+  margin: 0 30px;
+}
+}
 
 .article-card {
   padding: 20px;
@@ -286,12 +335,10 @@ main {
   transition: transform 0.5s ease, box-shadow 0.3s ease;
 }
 
-
 .article-card:hover {
   transform: translateY(-8px);
   box-shadow: 10px 10px 10px rgb(216, 149, 158);
 }
-
 
 .bullet-list-card {
   font-size: 10px;
@@ -316,18 +363,17 @@ main {
   background: rgb(153, 153, 194);
 }
 
-  /* make rounded corners on the sign-up form card */
+
+
+
   .form-container {
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    align-items: stretch;
-    padding: 30px;
+    align-items: stretch; 
     max-width: 1200px;
-    border-radius: 16px;
-    overflow: hidden;
     border: none;
     margin: 20px auto;
+    box-sizing: border-box;
   }
 
   /* image styling */
@@ -342,6 +388,7 @@ main {
   .form-container form {
     flex: 1;
     background: lightcoral;
+    box-shadow: 10px 10px 10px rgba(216, 149, 158, 0.6);
   }
 
   fieldset {
@@ -350,7 +397,6 @@ main {
     height: auto;
     margin: auto 0;
     box-sizing: border-box;
-    padding: 30px;
   }
 
    input, select {
@@ -358,48 +404,70 @@ main {
       border: 1px solid rgb(239, 89, 89);
       font-family: "Montserrat";
       border-radius: 6px;
+      
       }
 
-  @media (max-width: 900px) {
-    .form-container {
-      flex-direction: column;
-      padding: 15px;
       
+      
+    @media (max-width: 900px) {
+  
+      .form-container {
+       flex-direction: column;
+       margin: 15px;
+      
+    }
+
+    fieldset {
+      padding: 30px;
+      height: 61vh;
     }
 
     .cat-subscription-box {
       width: 100%;
       height: 300px;
+      border-radius: 6px 6px 0 0;
     }
 
     .form-container form {
-      max-height: 350px;
+      max-height: 800px;
+      border-radius: 0 0 6px 6px;
     }
 
     .form-input {
-      font-size: 16px;
+      font-size: 13px;
     }
+
+    label {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 5px 0;
+    font-size: 13px;
+   }
 
     input, select {
       padding: 5px;
       font-size: 10px;
+      width: 90%;
     }
+
+    select {
+        width: 92%;
+      }
 
     .checkbox-container {
-      font-size: 15px;
-      padding-left: 24px;
-      margin-bottom: 10px;
-      transform: scale(0.9);
+      font-size: 11px;
+      padding-left: 30px;
+      margin: 0 5px 15px 5px;
     }
 
-    button {
+    .form-button {
       font-size: 13px;
       padding: 5px 10px;
       margin-top: 15px;
     }
 
     #message {
-      padding: 5px 25px 25px 0;
+      padding: 0 8px 35px 0;
     }
 
     #name, #email, #address {
@@ -409,23 +477,67 @@ main {
   }
 
   @media (min-width: 901px) {
- 
+
+    .form-container {
+      margin: 20px auto 60px auto;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    fieldset {
+     padding: 50px;
+   }
+
+    .form-container form {
+      border-radius: 0 6px 6px 0;
+    }
+
+    .cat-subscription-box {
+      border-radius: 6px 0 0 6px;
+    }
+
      .form-input {
-      padding: 10px;
       font-family: "montserrat";
     }
+
+    .form-input p {
+      margin: 12px 0 5px 0;
+      font-size: 16px;
+    }
+
+    label {
+    display: flex;
+    flex-direction: row;
+    margin: 0 0 5px 0;
+    font-size: 16px;
+   }
+
+   #message {
+    height: 80px;
+   }
     
     input, select {
-     padding: 10px;
-      font-size: 13px;
+     padding: 8px;
+     margin: 0 0 8px 0;
+     font-size: 13px;
+     width: 90%;
+    }
+
+    select {
+      width: 93.5%;
     }
 
     .checkbox-container {
-      font-size: 18px;
-      padding-left: 25px;
-      margin: 10px 5px;
+      font-size: 15px;
+      padding-left: 30px;
+      margin: 15px 15px;
     }
 
+    .form-button {
+      font-size: 15px;
+      padding: 7px 10px;
+      margin: 10px 0 0 0;
+    }
   }
 
 
@@ -497,14 +609,11 @@ main {
   display: block;
 }
 
-button {
+.form-button {
   font-family: "montserrat";
-  /* font-size: 16px; */
   border: 1px solid #4f7c75;
   background: #93e7da;
   border-radius: 6px;
-  /* padding: 10px 18px; */
-  /* margin-top: 20px; */
 }
 
 footer {
