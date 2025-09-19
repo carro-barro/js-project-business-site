@@ -24,13 +24,17 @@
     href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet"
   >
-  <title>Business site</title>
+  <link rel="icon" href="img/cat-icon.png">
+
+  <title>Carolinas cat subscription</title>
 </head>
 
 <body>
   <div class="site">
 
-    <header>
+    <header id="home">
+
+      <!-- hamburger menu -->
       <nav class="mobile-navbar">
         <div class="ham-menu" id="hamMenu">
           <span></span>
@@ -38,33 +42,38 @@
           <span></span>
         </div>
         <ul class="ham-menu-links" id="hamMenuLinks">
-          <li><a class="menu-item" href="#">Home</a></li>
-          <li><a class="menu-item" href="#">Products</a></li>
-          <li><a class="menu-item" href="#">Articles</a></li>
-          <li><a class="menu-item" href="#">Sign up</a></li>
+          <li><a class="menu-item" href="#home">Home</a></li>
+          <li><a class="menu-item" href="#products">Products</a></li>
+          <li><a class="menu-item" href="#articles">Articles</a></li>
+          <li><a class="menu-item" href="#sign-up">Sign up</a></li>
         </ul>
+        <button id="partyModeBtnMobile" class="party-mode-btn-mobile">Party mode</button>
       </nav>
 
+      <!-- desktop navigation bar -->
       <nav class="desktop-navbar">
-        <div class="nav-links-container">
+        <div class="nav-links-container" id="navLinks">
           <a
             class="nav-link"
-            href="#"
+            href="#home"
           >Home</a>
           <a
             class="nav-link"
-            href="#"
+            href="#products"
           >Products</a>
           <a
             class="nav-link"
-            href="#"
+            href="#articles"
           >Articles</a>
           <a
             class="nav-link"
-            href="#"
+            href="#sign-up"
           >Sign up</a>
         </div>
+        <button id="partyModeBtnDesktop" class="party-mode-btn-desktop">Party mode</button>
       </nav>
+
+      <!-- hero image -->
       <div class="hero-image">
         <h1>Cat subscription</h1>
       </div>
@@ -72,10 +81,13 @@
 
     <main>
 
-      <h1 class="product-h1">Products</h1>
-
-      <div class="products-container">
-
+      <!-- Product Section -->
+      <div class="product-section" id="products">
+        
+        <h1 class="product-h1">Products</h1>
+        
+        <div class="products-container">
+          
         <article class="product-cards">
           <img class="product-img" src="./img/cat-candy-1.jpg" alt="cat candy">
           <h3 class="product-heading">Cat Candy</h3>
@@ -89,7 +101,7 @@
           <p class="price">$19.99</p>
           <p class="product-text">Comfortable cotton t-shirt in various colors</p>
         </article>
-
+        
         <article class="product-cards">
           <img class="product-img" src="./img/cat-food-1.jpg" alt="cat food">
           <h3 class="product-heading">Cat Candy</h3>
@@ -110,35 +122,38 @@
           <p class="price">$19.99</p>
           <p class="product-text">Comfortable cotton t-shirt in various colors</p>
         </article>
-
+        
         <article class="product-cards">
           <img class="product-img" src="./img/cat-toy-2.png" alt="cat toy">
           <h3 class="product-heading">Cat Candy</h3>
           <p class="price">$19.99</p>
           <p class="product-text">Comfortable cotton t-shirt in various colors</p>
         </article>
-
+        
         <article class="product-cards">
           <img class="product-img" src="./img/cat-food-2.jpg" alt="cat food">
           <h3 class="product-heading">Cat Candy</h3>
           <p class="price">$19.99</p>
           <p class="product-text">Comfortable cotton t-shirt in various colors</p>
         </article>
-
+        
         <article class="product-cards">
           <img class="product-img" src="./img/cat-vitamin-2.jpg" alt="cat vitamin">
           <h3 class="product-heading">Cat Candy</h3>
           <p class="price">$19.99</p>
           <p class="product-text">Comfortable cotton t-shirt in various colors</p>
         </article>
-
       </div>
+    </div>
 
-      <h1 class="article-h1">Articles</h1>
+      <!-- Article Section -->
+      <div class="article-section" id="articles">
 
-      <div class="article-cards-container">
-
-        <article class="article-card health-article">
+        <h1 class="article-h1">Articles</h1>
+        
+        <div class="article-cards-container">
+        
+          <article class="article-card health-article">
           <h3 class="article-heading">How cats can improve your overall health</h3>
           <p class="article-text">Cats can have a surprisingly positive impact on your health. Spending time with them
             helps
@@ -160,15 +175,6 @@
             approach at their own pace, as forcing interaction can cause stress. Lastly, schedule regular vet checkups
             to keep your cat healthy and happy.</p>
         </article>
-        <article class="article-card flowers-article">
-          <h3 class="article-heading">Flowers that actually aren't cat friendly</h3>
-          <p class="article-text">Not all flowers are safe for cats, and some common ones can actually be toxic. Lilies
-            are especially dangerous—even a small amount can cause serious kidney problems. Other flowers to avoid
-            include
-            tulips, daffodils, chrysanthemums, and azaleas, which may lead to stomach upset, drooling, or worse if
-            ingested. If you share your home with a cat, it's best to keep these plants out of reach and choose pet-safe
-            alternatives like roses, sunflowers, or orchids instead.</p>
-        </article>
         <article class="article-card toxic-foods-article">
           <h3 class="article-heading">5 foods you didn't know were toxic for cats</h3>
           <p class="article-text">Some everyday foods that seem harmless can actually be toxic for cats. Here are five
@@ -182,11 +188,26 @@
           </ul>
           <p class="article-text">Keeping these foods out of reach helps protect your cat's health and prevents
             emergency vet visits</p>
-        </article>
+          </article>
+        <article class="article-card flowers-article">
+          <h3 class="article-heading">Flowers that actually aren't cat friendly</h3>
+          <p class="article-text">Not all flowers are safe for cats, and some common ones can actually be toxic. Lilies
+            are especially dangerous—even a small amount can cause serious kidney problems. Other flowers to avoid
+            include
+            tulips, daffodils, chrysanthemums, and azaleas, which may lead to stomach upset, drooling, or worse if
+            ingested. If you share your home with a cat, it's best to keep these plants out of reach and choose pet-safe
+            alternatives like roses, sunflowers, or orchids instead.</p>
+          </article>
+          <article class="article-card best-article">
+          <h3 class="article-heading">The best things about owning a cat</h3>
+          <p class="article-text">Cats are wonderful companions that bring warmth and joy into a home. Their playful nature and quiet moments of affection can brighten even the busiest day. Beyond their charm, cats are also independent, making them easy to care for while still offering strong bonds of companionship. Whether they’re chasing toys, curling up in your lap, or simply keeping you company, cats add comfort and happiness to everyday life.</p>
+          </article>
+        </div>
+        <button class="article-button">More articles</button>
       </div>
-      <button class="article-button">More articles</button>
-
-      <div class="form-container">
+      
+     <!-- sign up form -->
+      <div class="form-container" id="sign-up">
         <img
           class="cat-subscription-box"
           src="img/cat-subscription.webp"
@@ -269,6 +290,8 @@
         </form>
       </div>
     </main>
+
+    <!-- footer -->
     <footer>
       <div class="socials">
         <p class="p-footer">Connect with us!</p>
@@ -287,10 +310,13 @@
             ></ion-icon></a>
         </div>
       </div>
-      <img
+      <div class="cat-container">
+        <img id="talkingCat"
         class="cat-footer"
         src="img/cat-footer.png"
-      />
+        />
+        <div id="speechBubble" class="speech-bubble">Hello💗</div>
+      </div>
     </footer>
     <script src="script.js"></script>
   </div>

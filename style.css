@@ -1,7 +1,26 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: lightpink;
   font-family: "montserrat";
   margin: 0;
+}
+
+/* party mode styling */
+.party-mode-body {
+  background-image: url(img/rainbow-background.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+footer.party-mode,
+.mobile-navbar.party-mode,
+.desktop-navbar.party-mode {
+  background-image: url(img/pink-metallic.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .site {
@@ -14,7 +33,8 @@ main {
   flex: 1;
 }
 
-/* hamburgar meny that is only visible on mobile */
+
+/* hamburger menu that is only visible on mobile */
 
 .mobile-navbar {
   display: none;
@@ -30,7 +50,8 @@ main {
   background: rgb(249, 231, 233);
   color: black;
   padding: 0.8rem 1.5rem;
-  position: relative;
+  position: fixed;
+  width: 100%;
 }
 
 .ham-menu {
@@ -38,6 +59,8 @@ main {
   flex-direction: column;
   cursor: pointer;
   width: 40px;
+  position: relative;
+  z-index: 2000;
 }
 
 .ham-menu span {
@@ -102,7 +125,29 @@ main {
   font-size: 22px;
   font-weight: 500;
   margin: 17px 0;
+  transition: 0.3s ease;
 }
+
+.ham-menu-links li:hover {
+  font-weight: 700;
+  font-size: 23px;
+}
+
+.party-mode-btn-mobile {
+  font-size: 16px;
+  color: black;
+  background-image: url(img/gold-background.jpg);
+  border: none;
+  border-radius: 7px;
+  padding: 5px 10px;
+  margin-right: 40px;
+  transition: background-color 0.3s ease;
+  }
+
+  .party-mode-btn-mobile:hover {
+    background-color: rgba(94, 94, 94, 0.175);
+    background-blend-mode: multiply; 
+  }
 
 }
 
@@ -119,7 +164,10 @@ main {
     padding: 30px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     height: 20px;
+    position: fixed;
+    width: 100%;
   }
 
   .nav-links-container {
@@ -139,14 +187,31 @@ main {
     font-weight: 700;
     font-size: 19px;
   }
+
+  .party-mode-btn-desktop {
+  font-size: 16px;
+  color: black;
+  background-image: url(img/gold-background.jpg);
+  border: none;
+  border-radius: 7px;
+  padding: 5px 10px;
+  margin-right: 60px;
+  align-self: center;
+  transition: background-color 0.3s ease;
+  }
+
+  .party-mode-btn-desktop:hover {
+    background-color: rgba(94, 94, 94, 0.175);
+    background-blend-mode: multiply; 
+  }
 }
+
+/* hero image */
 
 .hero-image {
   background-image: linear-gradient(rgba(72, 58, 65, 0.455)), url("./img/cat-hero-image.jpg");
   background-size: cover;
   background-position: center;
-
-    
     
   display: flex;
   justify-content: center;
@@ -157,8 +222,8 @@ main {
 @media (max-width: 599px) {
 
   .hero-image {
-    height: 45vh;
-    max-width: 90vh;
+    height: 55vh;
+    max-width: 100%;
     font-size: 15px;
   }
 }
@@ -166,7 +231,7 @@ main {
 @media (min-width: 600px) and (max-width: 1023px) {
 
   .hero-image {
-    height: 55vh;
+    height: 60vh;
     font-size: 20px;
   }
 }
@@ -174,9 +239,20 @@ main {
 @media (min-width: 1025px) {
 
   .hero-image {
-    height: 60vh;
+    height: 65vh;
     font-size: 25px;
   }
+}
+
+/* product styling */
+
+@media (min-width: 1600px){
+
+  .product-section {
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+    }
 }
 
 .product-h1, .article-h1 {
@@ -187,15 +263,15 @@ main {
 
 .products-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  scroll-padding: 1rem;
-
+  scroll-padding: 25px;
+  
   gap: 15px;
-  margin: 0 auto 0 auto;
   padding: 30px 25px;
 }
+
 
 .product-cards {
   background: white;
@@ -209,6 +285,11 @@ main {
 
   border-radius: 6px;
   box-shadow: 10px 10px 10px rgba(216, 149, 158, 0.6);
+  transition: all .2s ease;
+}
+
+.product-cards:hover {
+  background: #eceaea;
 }
 
 .product-img {
@@ -229,7 +310,6 @@ main {
 
 .product-text {
   font-size: 10px;
-  width: 100%;
   margin: 0;
   text-align: center;
 }
@@ -252,6 +332,8 @@ main {
   background: #765b62;
 }
 
+/* article styling */
+
 .article-text {
   font-size: 10px;
   width: 100%;
@@ -262,12 +344,31 @@ main {
   margin: 5px;
 }
 
+.article-section {
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
+  max-width: 1500px;
+}
+
 .article-cards-container {
   display: grid;
   gap: 1rem;
-  margin: 0 auto 0 auto;
-  max-width: 1500px;
   padding: 30px;
+}
+
+.article-button {
+  background: rgb(246, 222, 231);
+  font-family: "montserrat";
+  font-size: 15px;
+  font-weight: 500;
+  border: 1px solid rgb(201, 133, 145);
+  border-radius: 15px;
+  padding: 8px 10px;
+}
+
+.article-button:hover {
+  background: rgb(228, 212, 212);
 }
 
 
@@ -280,16 +381,13 @@ main {
   }
 
   .article-button {
-  background: rgb(243, 215, 220);
-  font-family: "montserrat";
-  font-size: 15px;
-  border: 1px solid rgb(201, 133, 145);
-  border-radius: 15px;
-  padding: 8px 10px;
-  width: 90%;
   margin: 0 30px 20px 30px;
-  
 }
+
+.best-article {
+    display: none;
+  }
+
 }
 
 @media (min-width: 600px) and (max-width: 1023px) {
@@ -299,33 +397,39 @@ main {
   }
 
   .article-button {
-  background: rgb(243, 215, 220);
-  font-family: "montserrat";
-  font-size: 15px;
-  border: 1px solid rgb(201, 133, 145);
-  border-radius: 15px;
-  padding: 8px 10px;
   width: 200px;
   margin: 0 0 20px 30px;
 }
+
+  .best-article {
+    display: none;
+  }
+
 }
 
 @media (min-width: 1024px) {
 
   .article-cards-container {
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
   }
 
   .article-button {
-  background: rgb(243, 215, 220);
-  font-family: "montserrat";
-  font-size: 15px;
-  border: 1px solid rgb(201, 133, 145);
-  border-radius: 15px;
-  padding: 8px 10px;
   width: 200px;
   margin: 0 30px;
-}
+  }
+ 
+  .health-article {
+    grid-column: span 2;
+  }
+
+  .toxic-foods-article {
+    grid-row: span 2;
+  }
+  
+  .best-article {
+    grid-column: span 2;
+  }
 }
 
 .article-card {
@@ -355,16 +459,19 @@ main {
   background: #e6dfc5;
 }
 
-.flowers-article {
-  background: #f6e2b2;
-}
-
 .toxic-foods-article {
   background: rgb(153, 153, 194);
 }
 
+.flowers-article {
+  background: #f6e2b2;
+}
 
+.best-article {
+  background: rgb(251, 191, 169);
+}
 
+/* form styling and layout */
 
   .form-container {
     display: flex;
@@ -399,16 +506,14 @@ main {
     box-sizing: border-box;
   }
 
-   input, select {
-      background: rgb(238, 187, 187);
-      border: 1px solid rgb(239, 89, 89);
-      font-family: "Montserrat";
-      border-radius: 6px;
-      
-      }
+  input, select {
+    background: rgb(238, 187, 187);
+    border: 1px solid rgb(239, 89, 89);
+    font-family: "Montserrat";
+    border-radius: 6px;
+   }
 
-      
-      
+      /*makes the form layout be vertical on mobile and tablet and horisontal on desktop */
     @media (max-width: 900px) {
   
       .form-container {
@@ -419,7 +524,6 @@ main {
 
     fieldset {
       padding: 30px;
-      height: 61vh;
     }
 
     .cat-subscription-box {
@@ -479,7 +583,7 @@ main {
   @media (min-width: 901px) {
 
     .form-container {
-      margin: 20px auto 60px auto;
+      margin: 20px auto 50px auto;
       padding: 20px;
       box-sizing: border-box;
     }
@@ -513,7 +617,7 @@ main {
    }
 
    #message {
-    height: 80px;
+    padding: 4px 8px 80px 7px;
    }
     
     input, select {
@@ -562,9 +666,6 @@ main {
 }
 
 
-
-/* change the color on the checkboxes if I want, now its what i followed in the video */
-
 .custom-checkbox {
   position: absolute;
   top: 0;
@@ -579,8 +680,6 @@ main {
 .checkbox-row {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between;
-  gap: 8px; */
   flex-wrap: wrap;
 }
 
@@ -612,9 +711,15 @@ main {
 .form-button {
   font-family: "montserrat";
   border: 1px solid #4f7c75;
-  background: #93e7da;
+  background: #aae9e0;
   border-radius: 6px;
 }
+
+.form-button:hover {
+  background: #aadbd3;
+}
+
+/* footer styling */
 
 footer {
   background: rgb(248, 218, 222);
@@ -623,12 +728,29 @@ footer {
   justify-content: space-between;
 }
 
+.cat-container {
+  position: relative;
+  display: inline-block;
+}
 
 .cat-footer {
-  max-height: 150px;
+  max-height: 160px;
   margin: 10px 20px 10px 0;
 }
 
+.speech-bubble {
+  background: white;
+  color: black;
+  font-size: 16px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
 
 .p-footer {
   font-size: 15px;

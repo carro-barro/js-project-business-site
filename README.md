@@ -11,4 +11,6 @@
 
 make a carousel of products
 
+click the cat in the footer for a suprise!
+
 link to netlify: https://carolinas-business-site.netlify.app/
